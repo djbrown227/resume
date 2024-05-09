@@ -1,0 +1,138 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;700&display=swap');
+
+/* General body and font settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px; /* Smaller base font size for body text */
+    color: #333;
+    background: #f4f4f4;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.left-column, .right-column {
+    padding: 20px;
+}
+
+.left-column {
+    background-color: #004d40;
+    color: white;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 50px 80px;
+}
+
+.right-column {
+    background-color: #ffffff;
+    color: #333;
+    width: 67%;
+    padding: 50px 110px;
+}
+
+/* Titles and headings */
+.main-title {
+    font-size: 28px; /* Larger font size for main title */
+    font-family: 'Merriweather', serif;
+    color: #f7f7f7;
+    text-align: center; /* Centering main title */
+}
+
+.section-title {
+    font-size: 26px; /* Suitable for section headers */
+    font-family: 'Merriweather', serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eeeeee;
+}
+
+.sub-section-title, .job-title {
+    font-size: 18px; /* Clear distinction for sub-section titles and job titles */
+    font-family: 'Roboto', sans-serif; /* Consistency in font style for readability */
+    margin-bottom: 0px;
+}
+
+.right-column p, .right-column li {
+    line-height: 1.4; /* Custom line spacing for right column elements */
+}
+
+.left-column p, .left-column li {
+    line-height: 1.4; /* Increased line height for better readability in the left column */
+}
+
+/* Body text settings */
+p, li {
+    font-size: 14px; /* Body text size */
+    line-height: 1.6; /* Adequate spacing between lines */
+}
+
+/* Link styling */
+a {
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.left-column a, .left-column a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.left-column a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+@media print {
+    body, html {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: #FFFFFF;
+        color: #000;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        box-shadow: none;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .left-column, .right-column {
+        width: 33.333%;
+        padding: 15px;
+    }
+
+    .right-column {
+        width: 66.666%;
+        padding: 15px;
+    }
+
+    a {
+        text-decoration: underline;
+        color: inherit;
+    }
+}
