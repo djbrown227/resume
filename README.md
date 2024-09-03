@@ -33,7 +33,7 @@ The layout is designed to be responsive and print-friendly, ensuring it looks gr
 
 ## How to View
 
-You can view the resume online via GitHub Pages at the following link: [Daniel Brown's Resume](https://djbrown227.github.io/)
+You can view the resume online via GitHub Pages at the following link: [Daniel Brown's Resume](https://djbrown227.github.io/resume/)
 
 Alternatively, you can clone the repository and open the `index.html` file in your web browser.
 
