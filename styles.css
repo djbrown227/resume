@@ -6,7 +6,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px; /* Smaller base font size for body text */
+    font-size: 14px;
     color: #333;
     background: #f4f4f4;
     box-sizing: border-box;
@@ -21,7 +21,8 @@ body, html {
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .left-column, .right-column {
@@ -34,66 +35,82 @@ body, html {
     width: 33%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding: 50px 80px;
+    padding: 50px 40px;
 }
 
 .right-column {
     background-color: #ffffff;
     color: #333;
     width: 67%;
-    padding: 50px 110px;
+    padding: 50px 60px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        padding: 30px;
+    }
 }
 
 /* Titles and headings */
 .main-title {
-    font-size: 28px; /* Larger font size for main title */
+    font-size: 28px;
     font-family: 'Merriweather', serif;
     color: #f7f7f7;
-    text-align: center; /* Centering main title */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .section-title {
-    font-size: 26px; /* Suitable for section headers */
+    font-size: 22px;
     font-family: 'Merriweather', serif;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 20px 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
 }
 
 .sub-section-title, .job-title {
-    font-size: 18px; /* Clear distinction for sub-section titles and job titles */
-    font-family: 'Roboto', sans-serif; /* Consistency in font style for readability */
-    margin-bottom: 0px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
 }
 
 .right-column p, .right-column li {
-    line-height: 1.4; /* Custom line spacing for right column elements */
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .left-column p, .left-column li {
-    line-height: 1.4; /* Increased line height for better readability in the left column */
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 /* Body text settings */
 p, li {
-    font-size: 14px; /* Body text size */
-    line-height: 1.6; /* Adequate spacing between lines */
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 /* Link styling */
 a {
     color: #1a0dab;
     text-decoration: none;
+    font-weight: 700;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-.left-column a, .left-column a:hover {
+.left-column a {
     color: white;
     text-decoration: underline;
 }
@@ -103,36 +120,41 @@ a:hover {
     text-decoration: none;
 }
 
+/* Print specific styles */
 @media print {
     body, html {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background: #FFFFFF;
+        background: #ffffff;
         color: #000;
+        font-size: 12px; /* Slightly smaller font size for print */
     }
 
     .container {
         width: 100%;
         max-width: none;
+        margin: 0;
         padding: 0;
         box-shadow: none;
-        display: flex;
-        flex-wrap: nowrap;
+        display: block; /* Stacks columns for better print flow */
     }
 
     .left-column, .right-column {
-        width: 33.333%;
-        padding: 15px;
+        width: 100%; /* Full width for print */
+        padding: 15px; /* Reduced padding to fit content on a single page */
+        background: none;
+        color: black;
     }
 
-    .right-column {
-        width: 66.666%;
-        padding: 15px;
+    .main-title, .section-title {
+        color: black; /* Ensure titles print in black */
     }
 
     a {
         text-decoration: underline;
         color: inherit;
+    }
+
+    /* Page break control */
+    .container, .left-column, .right-column {
+        page-break-inside: avoid; /* Prevent content from splitting awkwardly */
     }
 }
