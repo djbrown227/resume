@@ -1,21 +1,14 @@
-/* Variables for colors and fonts */
-:root {
-    --primary-color: #004d40;
-    --secondary-color: #ffffff;
-    --text-color: #333;
-    --accent-color: #1a0dab;
-    --font-main: 'Roboto', sans-serif;
-    --font-title: 'Merriweather', serif;
-}
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;700&display=swap');
 
-/* General body and font settings */
+/* Base Styles */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: var(--font-main);
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    color: var(--text-color);
-    background: #f4f4f4;
+    color: #333;
+    background-color: #f4f4f4;
     box-sizing: border-box;
 }
 
@@ -36,32 +29,34 @@ body, html {
 }
 
 .left-column {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    width: 33%;
+    background-color: #004d40;
+    color: white;
+    flex: 1 1 30%;
+    min-width: 300px;
+    text-align: left;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 50px 80px;
 }
 
 .right-column {
-    background-color: var(--secondary-color);
-    width: 67%;
-    padding: 50px 110px;
+    background-color: #ffffff;
+    color: #333;
+    flex: 2 1 70%;
+    min-width: 300px;
 }
 
 .main-title {
     font-size: 28px;
-    font-family: var(--font-title);
-    color: var(--secondary-color);
+    font-family: 'Merriweather', serif;
+    color: #f7f7f7;
     text-align: center;
 }
 
 .section-title {
     font-size: 24px;
-    font-family: var(--font-title);
-    margin: 20px 0 10px;
+    font-family: 'Merriweather', serif;
+    margin: 20px 0;
     padding-bottom: 5px;
     border-bottom: 2px solid #eeeeee;
 }
@@ -69,22 +64,17 @@ body, html {
 .sub-section-title, .job-title {
     font-size: 18px;
     margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.right-column p, .right-column li {
-    line-height: 1.6;
-}
-
+.right-column p, .right-column li,
 .left-column p, .left-column li {
     line-height: 1.6;
-}
-
-p, li {
     font-size: 14px;
 }
 
 a {
-    color: var(--accent-color);
+    color: #1a0dab;
     text-decoration: none;
 }
 
@@ -92,32 +82,58 @@ a:hover {
     text-decoration: underline;
 }
 
+.left-column a {
+    color: white;
+}
+
 .left-column a:hover {
     color: #ccc;
 }
 
-/* Responsive adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
+
     .left-column, .right-column {
         width: 100%;
-        padding: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 20px;
     }
 }
 
+/* Print Styles */
 @media print {
     body, html {
-        background: #ffffff;
+        background-color: #ffffff;
         color: #000;
+        margin: 0;
+        padding: 0;
     }
+
     .container {
-        width: 100%;
+        display: block;
+        max-width: none;
         box-shadow: none;
     }
+
+    .left-column, .right-column {
+        width: 100%;
+        padding: 10px;
+    }
+
     a {
-        color: inherit;
         text-decoration: underline;
+        color: inherit;
     }
 }
+
